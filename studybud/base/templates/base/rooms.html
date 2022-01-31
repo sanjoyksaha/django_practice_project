@@ -6,7 +6,12 @@
 	<div>
 		<ul class="list-group">
 			{% for room in rooms %}
-				<li class="list-group-item">{{ room.id }} ---- <a href="{% url 'room_details' room.id %}">{{ room.name }}</a></li>
+				<li class="list-group-item">
+					{{ room.id }} ---- <a href="{% url 'room_details' room.id %}">{{ room.name }}</a>
+					<br>
+					<span>Host Name: @{{ room.host.username }}, </span>
+					<span>Topic: {{ room.topic.name }}</span>
+				</li>
 			{% endfor %}
 		</ul>
 	</div>
